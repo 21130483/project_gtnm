@@ -54,9 +54,8 @@
                             <ul>
                                 <li><a href="./index.html">Trang chủ</a></li>
                                 <li><a href="./findmusic.html">Tìm kiếm</a></li>
-                                <li><a href="./about.html">Bài hát</a></li>
-                                <li><a href="./discography.html">Album</a></li>
-                                <li><a href="./tours.html">Video</a></li>
+                                <li><a href="./musics.html">Bài hát</a></li>
+                                <li><a href="./videos.html">MV</a></li>
                                 <li><a href="#">BXH</a>
                                     <ul class="dropdown">
                                         <li><a href="./bxhvpop.html">V-Pop</a></li>
@@ -158,9 +157,26 @@
                             <!-- <div class="song-name">
                             <p>01. Main Hit Song</p>
                         </div> -->
-                            <audio preload="auto" controls style="width: 100%">
+                            <audio id="myAudio" preload="auto" controls style="width: 100%" autoplay>
                                 <source src="music-files/Chạy Ngay Đi.mp3">
                             </audio>
+
+                            <script>
+                                document.addEventListener('DOMContentLoaded', function() {
+                                  const audio = document.getElementById('myAudio');
+                            
+                                  // Lắng nghe sự kiện kết thúc của audio
+                                  audio.addEventListener('ended', function() {
+                                    // Khi audio kết thúc, quay lại thời điểm 0 để lặp lại
+                                    audio.currentTime = 0;
+                                    audio.play(); // Chơi lại audio
+                                  });
+                            
+                                  // Chơi audio lần đầu tiên
+                                  audio.play();
+                                });
+                              </script>
+                            
                         </div>
                     </div>
                 </div>
